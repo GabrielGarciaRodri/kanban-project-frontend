@@ -6,6 +6,7 @@ import { PrivateRoute } from './components/common/PrivateRoute';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Boards } from './pages/Boards';
+import { Board } from './pages/Board';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +30,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <Boards />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/boards/:id"
+              element={
+                <PrivateRoute>
+                  <Board />
                 </PrivateRoute>
               }
             />
